@@ -22,12 +22,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         mapView.showsUserLocation = true
+        mapView.showsScale = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
-
+        mapView.showsPointsOfInterest = true
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SearchTableView") as! SearchTableView
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
@@ -62,6 +64,12 @@ class ViewController: UIViewController {
         navigationItem.titleView?.isHidden = false
         UserDefaults.standard.removeObject(forKey: "location")
         UserDefaults.standard.synchronize()
+    }
+    
+    @IBAction func getDirectionBtnAction(_ sender: Any) {
+      
+          
+        
     }
 }
 
@@ -105,27 +113,49 @@ func drawingPathBetweenRoots(sourceLocation:CLLocationCoordinate2D,destinationLo
         
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
         let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
+        let sourceItem = MKMapItem(placemark: sourcePlaceMark)
+        let destItem = MKMapItem(placemark: destinationPlaceMark)
         let directionRequest = MKDirectionsRequest()
-        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-        directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
-        directionRequest.transportType = .walking
+        directionRequest.source = sourceItem
+        directionRequest.destination = destItem
+        directionRequest.transportType = .any
         let directions = MKDirections(request: directionRequest)
-        directions.calculate { (response, error) in
-            guard let directionResonse = response else {
-                if let error = error {
-                    print("we have error getting directions==\(error.localizedDescription)")
-                }
-                return
+   
+    directions.calculate(completionHandler: {response , error in
+        guard let response = response else{
+            if let error = error {
+                print("we have error getting directions==\(error.localizedDescription)")
             }
-            //get route and assign to our route variable
-            let route = directionResonse.routes[0]
-            //add rout to our mapview
-            self.mapView.add(route.polyline, level: .aboveRoads)
-            //setting rect of our mapview to fit the two locations
-            let rect = route.polyline.boundingMapRect
-            self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+          return
         }
+        let route = response.routes[0]
+        self.mapView.add(route.polyline, level: .aboveRoads)
+        let  rekt = route.polyline.boundingMapRect
+        self.mapView.setRegion(MKCoordinateRegionForMapRect(rekt), animated: true)
+    } )
+//        directions.calculate { (response, error) in
+//            guard let directionResonse = response else {
+//                if let error = error {
+//                    print("we have error getting directions==\(error.localizedDescription)")
+//                }
+//                return
+//            }
+//            //get route and assign to our route variable
+//            let route = directionResonse.routes[0]
+//            //add rout to our mapview
+//            self.mapView.add(route.polyline, level: .aboveRoads)
+//            //setting rect of our mapview to fit the two locations
+//            let rect = route.polyline.boundingMapRect
+//            self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+//        }
 
+    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay)
+        render.strokeColor = UIColor.blue
+       render.lineWidth = 3.0
+     return render
+        
     }
 }
 extension ViewController: HandleMapSearch {
