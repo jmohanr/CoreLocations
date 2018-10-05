@@ -286,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pvz-h4-cZ6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlurImageCell" rowHeight="150" id="mWW-cI-Ccb" customClass="BlurImageCell" customModule="CorrentLocation" customModuleProvider="target">
@@ -454,23 +454,65 @@
                                     <outlet property="delegate" destination="RZp-Dz-LyX" id="bYF-kT-7ar"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path " translatesAutoresizingMaskIntoConstraints="NO" id="0R8-ac-Mbd">
+                                <rect key="frame" x="0.0" y="533" width="375" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="mJJ-C0-AGG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4E-GS-gPG">
+                                <rect key="frame" x="167.5" y="523" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bF3-ht-gR3"/>
+                                    <constraint firstAttribute="height" constant="40" id="lFT-7b-f1X"/>
+                                </constraints>
+                                <state key="normal" image="Middle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlZ-2x-tKo">
+                                <rect key="frame" x="315" y="543" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Olc-zU-tXk"/>
+                                    <constraint firstAttribute="height" constant="40" id="Tcs-yh-Tn2"/>
+                                </constraints>
+                                <state key="normal" image="Library"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDs-2j-Yg5">
+                                <rect key="frame" x="20" y="543" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="kR6-ss-csy"/>
+                                    <constraint firstAttribute="height" constant="40" id="n1Y-Ci-2ya"/>
+                                </constraints>
+                                <state key="normal" image="Sdevice"/>
+                            </button>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HRx-3P-Mvs" firstAttribute="bottom" secondItem="Pvz-h4-cZ6" secondAttribute="bottom" id="aGF-V6-heb"/>
+                            <constraint firstItem="K4E-GS-gPG" firstAttribute="centerX" secondItem="hEe-zr-VED" secondAttribute="centerX" id="2pp-aY-j1q"/>
+                            <constraint firstItem="UlZ-2x-tKo" firstAttribute="top" secondItem="Pvz-h4-cZ6" secondAttribute="bottom" constant="30" id="5MC-wr-Bwv"/>
+                            <constraint firstItem="HRx-3P-Mvs" firstAttribute="trailing" secondItem="0R8-ac-Mbd" secondAttribute="trailing" id="Oga-QK-Kxp"/>
+                            <constraint firstItem="rDs-2j-Yg5" firstAttribute="top" secondItem="Pvz-h4-cZ6" secondAttribute="bottom" constant="30" id="ULF-Fm-MNM"/>
+                            <constraint firstItem="rDs-2j-Yg5" firstAttribute="leading" secondItem="HRx-3P-Mvs" secondAttribute="leading" constant="20" id="WMK-oT-oLD"/>
                             <constraint firstItem="Pvz-h4-cZ6" firstAttribute="leading" secondItem="HRx-3P-Mvs" secondAttribute="leading" id="cjp-c2-mRF"/>
                             <constraint firstItem="Pvz-h4-cZ6" firstAttribute="top" secondItem="HRx-3P-Mvs" secondAttribute="top" id="d3W-Bg-sIh"/>
+                            <constraint firstItem="HRx-3P-Mvs" firstAttribute="trailing" secondItem="UlZ-2x-tKo" secondAttribute="trailing" constant="20" id="nsP-mB-Y4b"/>
+                            <constraint firstItem="0R8-ac-Mbd" firstAttribute="top" secondItem="Pvz-h4-cZ6" secondAttribute="bottom" constant="20" id="ohY-rV-kjG"/>
+                            <constraint firstItem="HRx-3P-Mvs" firstAttribute="bottom" secondItem="0R8-ac-Mbd" secondAttribute="bottom" id="p4w-BB-mso"/>
                             <constraint firstItem="HRx-3P-Mvs" firstAttribute="trailing" secondItem="Pvz-h4-cZ6" secondAttribute="trailing" id="tiA-16-xS7"/>
+                            <constraint firstItem="0R8-ac-Mbd" firstAttribute="leading" secondItem="HRx-3P-Mvs" secondAttribute="leading" id="uar-Gq-OGB"/>
+                            <constraint firstItem="K4E-GS-gPG" firstAttribute="top" secondItem="Pvz-h4-cZ6" secondAttribute="bottom" constant="10" id="yFN-Td-duO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HRx-3P-Mvs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="d5k-gf-9HO"/>
                     <connections>
+                        <outlet property="deviceBtn" destination="rDs-2j-Yg5" id="ueo-6e-Vtk"/>
+                        <outlet property="libraryBtn" destination="UlZ-2x-tKo" id="9c5-9h-O8u"/>
                         <outlet property="tableView" destination="Pvz-h4-cZ6" id="ZnH-UP-796"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdD-gM-p32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="707"/>
+            <point key="canvasLocation" x="1640.8" y="706.59670164917543"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="moB-mr-YOu">
@@ -493,6 +535,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Library" width="40" height="40"/>
+        <image name="Middle" width="50" height="50"/>
+        <image name="Path " width="436" height="116"/>
+        <image name="Sdevice" width="42" height="42"/>
         <image name="backward" width="24" height="24"/>
         <image name="direction" width="32" height="32"/>
         <image name="forward" width="24" height="24"/>
