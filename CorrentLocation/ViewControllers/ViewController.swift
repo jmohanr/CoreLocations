@@ -43,8 +43,8 @@ class ViewController: UIViewController {
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self as HandleMapSearch
         navigationItem.titleView?.isHidden = true
-    
     }
+    
     @objc func getDirections(){
         guard let selectedPin = selectedPin else { return }
         let mapItem = MKMapItem(placemark: selectedPin)
@@ -55,6 +55,7 @@ class ViewController: UIViewController {
     @IBAction func getCurrentLocation(_ sender: Any) {
         mapView.setCenter((locationManager.location?.coordinate)!, animated: true)
     }
+    
     @IBAction func locationSeachBtnAction(_ sender: Any) {
         navigationItem.titleView?.isHidden = false
         UserDefaults.standard.set("true", forKey: "location")
@@ -66,11 +67,7 @@ class ViewController: UIViewController {
         UserDefaults.standard.synchronize()
     }
     
-    @IBAction func getDirectionBtnAction(_ sender: Any) {
-      
-          
-        
-    }
+    @IBAction func getDirectionBtnAction(_ sender: Any) {}
 }
 
 extension ViewController : CLLocationManagerDelegate {
@@ -83,8 +80,6 @@ func locationManager(_ manager: CLLocationManager, didChangeAuthorization status
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         if let location = locations.first {
-            
-            
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
@@ -120,8 +115,7 @@ func drawingPathBetweenRoots(sourceLocation:CLLocationCoordinate2D,destinationLo
         directionRequest.destination = destItem
         directionRequest.transportType = .any
         let directions = MKDirections(request: directionRequest)
-   
-    directions.calculate(completionHandler: {response , error in
+       directions.calculate(completionHandler: {response , error in
         guard let response = response else{
             if let error = error {
                 print("we have error getting directions==\(error.localizedDescription)")
@@ -133,23 +127,8 @@ func drawingPathBetweenRoots(sourceLocation:CLLocationCoordinate2D,destinationLo
         let  rekt = route.polyline.boundingMapRect
         self.mapView.setRegion(MKCoordinateRegionForMapRect(rekt), animated: true)
     } )
-//        directions.calculate { (response, error) in
-//            guard let directionResonse = response else {
-//                if let error = error {
-//                    print("we have error getting directions==\(error.localizedDescription)")
-//                }
-//                return
-//            }
-//            //get route and assign to our route variable
-//            let route = directionResonse.routes[0]
-//            //add rout to our mapview
-//            self.mapView.add(route.polyline, level: .aboveRoads)
-//            //setting rect of our mapview to fit the two locations
-//            let rect = route.polyline.boundingMapRect
-//            self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
-//        }
-
     }
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let render = MKPolylineRenderer(overlay: overlay)
         render.strokeColor = UIColor.blue
@@ -175,10 +154,7 @@ extension ViewController: HandleMapSearch {
         if ((UserDefaults.standard.object(forKey: "location")) != nil) {
             mapView.addAnnotation(annotation)
         }
-        else{
-            
-        }
-        
+        else{}
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)

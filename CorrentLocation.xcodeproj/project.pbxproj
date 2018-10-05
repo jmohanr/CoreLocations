@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841B9883216610D500B799E2 /* EditingViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9882216610D500B799E2 /* EditingViewVC.swift */; };
+		841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9884216614FF00B799E2 /* BlurImageCell.swift */; };
 		841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BCE8821649EE900017E33 /* NearByPlacesVC.swift */; };
 		841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BCE8A2164A29100017E33 /* NearbyCell.swift */; };
 		847712E0215F549F009271B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847712DF215F549E009271B2 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841B9882216610D500B799E2 /* EditingViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewVC.swift; sourceTree = "<group>"; };
+		841B9884216614FF00B799E2 /* BlurImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurImageCell.swift; sourceTree = "<group>"; };
 		841BCE8821649EE900017E33 /* NearByPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesVC.swift; sourceTree = "<group>"; };
 		841BCE8A2164A29100017E33 /* NearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
 		847712DF215F549E009271B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				847712D9215F4662009271B2 /* ViewControllers */,
 				84FBC1B2215CCEE100114397 /* Main.storyboard */,
+				841B9884216614FF00B799E2 /* BlurImageCell.swift */,
+				841B9882216610D500B799E2 /* EditingViewVC.swift */,
 				841BCE8821649EE900017E33 /* NearByPlacesVC.swift */,
 				841BCE8A2164A29100017E33 /* NearbyCell.swift */,
 				847712DF215F549E009271B2 /* Assets.xcassets */,
@@ -241,7 +247,9 @@
 				84FBC1B1215CCEE100114397 /* ViewController.swift in Sources */,
 				841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */,
 				841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */,
+				841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */,
 				84FBC1AF215CCEE100114397 /* AppDelegate.swift in Sources */,
+				841B9883216610D500B799E2 /* EditingViewVC.swift in Sources */,
 				84FBC1D4215CD70B00114397 /* SearchTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
