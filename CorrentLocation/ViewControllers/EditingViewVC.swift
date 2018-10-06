@@ -89,7 +89,7 @@ extension EditingViewVC:UITableViewDataSource,UITableViewDelegate{
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
        player = AVPlayer(url: videoURL!)
         let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = cell.bagroundImage.frame
+        playerLayer.frame = cell.bagroundImage.bounds
        
         if count >= 0 {
             if indexPath.row == count && isSelected == true{
@@ -99,7 +99,6 @@ extension EditingViewVC:UITableViewDataSource,UITableViewDelegate{
                 cell.colorLabel.isHidden = false
                 cell.playImage.isHidden = true
                  cell.bagroundImage.layer.addSublayer(playerLayer)
-                 player.play()
             } else{
                 cell.itemCountBtn.backgroundColor = UIColor.orange
                 cell.blurView.isHidden = true
@@ -130,12 +129,14 @@ extension EditingViewVC:UITableViewDataSource,UITableViewDelegate{
         }
     }
     @objc func playVideo(sender:UIButton){
-        if sender.isSelected == true {
+        if sender.tag == 1 {
             player.pause()
-            sender.isSelected = false
+            sender.setImage(#imageLiteral(resourceName: "icons8-pause"), for: .normal)
+            sender.tag = 0
         }else{
             player.play()
-            sender.isSelected = true
+            sender.setImage(#imageLiteral(resourceName: "icons8-play"), for: .normal)
+            sender.tag = 1
         }
         
     }
