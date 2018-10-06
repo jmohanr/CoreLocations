@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8409B62F2168A98B00575653 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409B62E2168A98B00575653 /* SlideViewController.swift */; };
+		8409B6312168A99E00575653 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409B6302168A99E00575653 /* CollectionViewCell.swift */; };
 		841B9883216610D500B799E2 /* EditingViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9882216610D500B799E2 /* EditingViewVC.swift */; };
 		841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9884216614FF00B799E2 /* BlurImageCell.swift */; };
 		841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BCE8821649EE900017E33 /* NearByPlacesVC.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8409B62E2168A98B00575653 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		8409B6302168A99E00575653 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		841B9882216610D500B799E2 /* EditingViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewVC.swift; sourceTree = "<group>"; };
 		841B9884216614FF00B799E2 /* BlurImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurImageCell.swift; sourceTree = "<group>"; };
 		841BCE8821649EE900017E33 /* NearByPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesVC.swift; sourceTree = "<group>"; };
@@ -78,6 +82,9 @@
 				84FBC1D3215CD70B00114397 /* SearchTableView.swift */,
 				84FBC1AE215CCEE100114397 /* AppDelegate.swift */,
 				84FBC1B0215CCEE100114397 /* ViewController.swift */,
+				841B9882216610D500B799E2 /* EditingViewVC.swift */,
+				8409B62E2168A98B00575653 /* SlideViewController.swift */,
+				841BCE8821649EE900017E33 /* NearByPlacesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,9 +120,8 @@
 			children = (
 				847712D9215F4662009271B2 /* ViewControllers */,
 				84FBC1B2215CCEE100114397 /* Main.storyboard */,
+				8409B6302168A99E00575653 /* CollectionViewCell.swift */,
 				841B9884216614FF00B799E2 /* BlurImageCell.swift */,
-				841B9882216610D500B799E2 /* EditingViewVC.swift */,
-				841BCE8821649EE900017E33 /* NearByPlacesVC.swift */,
 				841BCE8A2164A29100017E33 /* NearbyCell.swift */,
 				847712DF215F549E009271B2 /* Assets.xcassets */,
 				847712DA215F4EEA009271B2 /* TableViewCells */,
@@ -246,8 +252,10 @@
 			files = (
 				84FBC1B1215CCEE100114397 /* ViewController.swift in Sources */,
 				841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */,
+				8409B6312168A99E00575653 /* CollectionViewCell.swift in Sources */,
 				841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */,
 				841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */,
+				8409B62F2168A98B00575653 /* SlideViewController.swift in Sources */,
 				84FBC1AF215CCEE100114397 /* AppDelegate.swift in Sources */,
 				841B9883216610D500B799E2 /* EditingViewVC.swift in Sources */,
 				84FBC1D4215CD70B00114397 /* SearchTableView.swift in Sources */,
