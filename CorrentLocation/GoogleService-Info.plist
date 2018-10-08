@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>975667871021-vgf1d253h6eaio8s8kirtmg5q0o94i48.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.975667871021-vgf1d253h6eaio8s8kirtmg5q0o94i48</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAbzLVXM9xulh18I37AYJnPQXM8NdhlZj0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>975667871021</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Addtech.debuts.com</string>
+	<key>PROJECT_ID</key>
+	<string>debuts-ed9a4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>debuts-ed9a4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:975667871021:ios:989d7ea430a4dd85</string>
+	<key>DATABASE_URL</key>
+	<string>https://debuts-ed9a4.firebaseio.com</string>
+</dict>
+</plist>

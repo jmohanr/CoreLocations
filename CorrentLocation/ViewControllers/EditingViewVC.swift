@@ -59,7 +59,7 @@ var count = Int()
             self.sideView.addSubview(blurEffectView)
             blurEffectView.bringSubview(toFront: self.sideView)
             blurEffectView.contentView.addSubview(self.closeBtn)
-            blurEffectView.contentView.addSubview(self.img)
+
         }, completion: nil)
         
         

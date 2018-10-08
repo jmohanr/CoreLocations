@@ -7,14 +7,20 @@
 //
 
 import UIKit
-
-class ItemListViewController: UIViewController,UICollectionViewDelegateFlowLayout {
-
+import MapKit
+import CoreLocation
+class ItemListViewController: UIViewController {
+let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+       locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+       
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -29,5 +35,32 @@ class ItemListViewController: UIViewController,UICollectionViewDelegateFlowLayou
             cell.alpha = 1
             
         })
+    }
+}
+extension ItemListViewController :CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            locationManager.requestLocation()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        if let location = locations.first {
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location) { (placemark, error) in
+                if error == nil {
+                    let firstLocation = placemark?[0]
+                    let totalAddress = "\(firstLocation?.name ?? "")," + "\(firstLocation?.locality ?? "")," + "\(firstLocation?.administrativeArea ?? "")"
+                    self.addressLabel.text = totalAddress
+                  
+                }
+                else {
+                    print(error!)
+                }
+            }
+            
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error)")
     }
 }

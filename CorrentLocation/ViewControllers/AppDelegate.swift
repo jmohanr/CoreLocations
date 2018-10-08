@@ -7,15 +7,17 @@
 //
 
 import UIKit
-
+import Firebase
+import MapKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
+ let locationManager = CLLocationManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        locationManager.requestAlwaysAuthorization()
+        FirebaseApp.configure()
+         navigatingViewController()
         return true
     }
 
@@ -40,7 +42,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
+    func navigatingViewController(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        if ((UserDefaults.standard.object(forKey: "LoggedIn")) != nil) {
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            appDelegate.window?.rootViewController = initialViewController
+            appDelegate.window?.makeKeyAndVisible()
+            
+        } else {
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "DBSignInVC")
+            appDelegate.window?.rootViewController = initialViewController
+            appDelegate.window?.makeKeyAndVisible()
+        }
+    }
+    
 }
 

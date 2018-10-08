@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
         mapView.showsPointsOfInterest = true
+        
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SearchTableView") as! SearchTableView
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController.searchResultsUpdater = locationSearchTable as UISearchResultsUpdating
