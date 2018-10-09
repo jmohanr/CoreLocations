@@ -90,7 +90,14 @@ extension ItemListViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   
+        let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "DBItemDetailsVC") as! DBItemDetailsVC
+        viewcontroller.itemname = hItemDetails[indexPath.row].name
+        //imageName
+         viewcontroller.imageName  = hItemDetails[indexPath.row].image
+        self.present(viewcontroller, animated: true, completion: nil)
+    }
 }
 extension ItemListViewController:UITableViewDataSource,UITableViewDelegate,DBVitemsCellDelegate{
     func favItemBtnTapped(at index: IndexPath) {
@@ -124,7 +131,7 @@ extension ItemListViewController:UITableViewDataSource,UITableViewDelegate,DBVit
        
         cell.itemImage.image = vItemDetails[indexPath.row].itemImage
          cell.itemName.text = vItemDetails[indexPath.row].itemName
-        cell.itemPrice.text = String(vItemDetails[indexPath.row].Price)
+        cell.itemPrice.text = "₹\(vItemDetails[indexPath.row].Price)"
         cell.itemDesc.text = vItemDetails[indexPath.row].itemDesc
         return cell
     }
@@ -149,6 +156,11 @@ extension ItemListViewController:UITableViewDataSource,UITableViewDelegate,DBVit
 
         }
         return requiredHeight.size.height;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "DBItemDetailsVC") as! DBItemDetailsVC
+        //viewcontroller.hero = artistList[indexPath.row]
+        self.present(viewcontroller, animated: true, completion: nil)
     }
 }
 extension ItemListViewController :CLLocationManagerDelegate {

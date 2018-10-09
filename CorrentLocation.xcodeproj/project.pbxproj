@@ -23,6 +23,9 @@
 		841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BCE8821649EE900017E33 /* NearByPlacesVC.swift */; };
 		841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BCE8A2164A29100017E33 /* NearbyCell.swift */; };
 		847712E0215F549F009271B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847712DF215F549E009271B2 /* Assets.xcassets */; };
+		84FBA792216CD359006B7C5D /* DBPageNationCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBA790216CD359006B7C5D /* DBPageNationCV.swift */; };
+		84FBA793216CD359006B7C5D /* DBPageNationCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FBA791216CD359006B7C5D /* DBPageNationCV.xib */; };
+		84FBA795216CD85D006B7C5D /* DBItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBA794216CD85D006B7C5D /* DBItemDetailsVC.swift */; };
 		84FBC1AF215CCEE100114397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBC1AE215CCEE100114397 /* AppDelegate.swift */; };
 		84FBC1B1215CCEE100114397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBC1B0215CCEE100114397 /* ViewController.swift */; };
 		84FBC1B4215CCEE100114397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FBC1B2215CCEE100114397 /* Main.storyboard */; };
@@ -63,6 +66,9 @@
 		841BCE8821649EE900017E33 /* NearByPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesVC.swift; sourceTree = "<group>"; };
 		841BCE8A2164A29100017E33 /* NearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
 		847712DF215F549E009271B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84FBA790216CD359006B7C5D /* DBPageNationCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPageNationCV.swift; sourceTree = "<group>"; };
+		84FBA791216CD359006B7C5D /* DBPageNationCV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBPageNationCV.xib; sourceTree = "<group>"; };
+		84FBA794216CD85D006B7C5D /* DBItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBItemDetailsVC.swift; sourceTree = "<group>"; };
 		84FBC1AB215CCEE100114397 /* CorrentLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CorrentLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FBC1AE215CCEE100114397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FBC1B0215CCEE100114397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				84FBC1AE215CCEE100114397 /* AppDelegate.swift */,
 				84FBC1B0215CCEE100114397 /* ViewController.swift */,
 				841B9882216610D500B799E2 /* EditingViewVC.swift */,
+				84FBA794216CD85D006B7C5D /* DBItemDetailsVC.swift */,
 				8409B62E2168A98B00575653 /* SlideViewController.swift */,
 				841BCE8821649EE900017E33 /* NearByPlacesVC.swift */,
 			);
@@ -153,6 +160,8 @@
 				840853E2216B641100F879B9 /* DBVitemsCell.swift */,
 				840853E3216B641100F879B9 /* DBVitemsCell.xib */,
 				8409B6342168C83E00575653 /* ItemListViewController.swift */,
+				84FBA790216CD359006B7C5D /* DBPageNationCV.swift */,
+				84FBA791216CD359006B7C5D /* DBPageNationCV.xib */,
 				8409B6322168C81000575653 /* SecondViewCell.swift */,
 				8409B6302168A99E00575653 /* CollectionViewCell.swift */,
 				841B9884216614FF00B799E2 /* BlurImageCell.swift */,
@@ -284,6 +293,7 @@
 				84FBC1B9215CCEF200114397 /* LaunchScreen.storyboard in Resources */,
 				840853E5216B641100F879B9 /* DBVitemsCell.xib in Resources */,
 				840853E1216B63F400F879B9 /* DBHItemsCell.xib in Resources */,
+				84FBA793216CD359006B7C5D /* DBPageNationCV.xib in Resources */,
 				84FBC1B4215CCEE100114397 /* Main.storyboard in Resources */,
 				840853DB216B20B300F879B9 /* GoogleService-Info.plist in Resources */,
 				847712E0215F549F009271B2 /* Assets.xcassets in Resources */,
@@ -369,8 +379,10 @@
 				841BCE8921649EE900017E33 /* NearByPlacesVC.swift in Sources */,
 				840853DD216B273B00F879B9 /* DBSignInVC.swift in Sources */,
 				8409B6332168C81000575653 /* SecondViewCell.swift in Sources */,
+				84FBA795216CD85D006B7C5D /* DBItemDetailsVC.swift in Sources */,
 				8409B6312168A99E00575653 /* CollectionViewCell.swift in Sources */,
 				8409B6352168C83E00575653 /* ItemListViewController.swift in Sources */,
+				84FBA792216CD359006B7C5D /* DBPageNationCV.swift in Sources */,
 				841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */,
 				840853E0216B63F400F879B9 /* DBHItemsCell.swift in Sources */,
 				841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */,
