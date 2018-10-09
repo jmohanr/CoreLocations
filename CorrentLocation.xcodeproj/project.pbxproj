@@ -10,6 +10,10 @@
 		04C8E6E77BA70ACB710BCC8B /* Pods_CorrentLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EF4809BE03A4D749700458 /* Pods_CorrentLocation.framework */; };
 		840853DB216B20B300F879B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840853DA216B20B300F879B9 /* GoogleService-Info.plist */; };
 		840853DD216B273B00F879B9 /* DBSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840853DC216B273B00F879B9 /* DBSignInVC.swift */; };
+		840853E0216B63F400F879B9 /* DBHItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840853DE216B63F400F879B9 /* DBHItemsCell.swift */; };
+		840853E1216B63F400F879B9 /* DBHItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840853DF216B63F400F879B9 /* DBHItemsCell.xib */; };
+		840853E4216B641100F879B9 /* DBVitemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840853E2216B641100F879B9 /* DBVitemsCell.swift */; };
+		840853E5216B641100F879B9 /* DBVitemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840853E3216B641100F879B9 /* DBVitemsCell.xib */; };
 		8409B62F2168A98B00575653 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409B62E2168A98B00575653 /* SlideViewController.swift */; };
 		8409B6312168A99E00575653 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409B6302168A99E00575653 /* CollectionViewCell.swift */; };
 		8409B6332168C81000575653 /* SecondViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409B6322168C81000575653 /* SecondViewCell.swift */; };
@@ -46,6 +50,10 @@
 		73E6EB45A39F76ECE2F1DD08 /* Pods-CorrentLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CorrentLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CorrentLocation/Pods-CorrentLocation.release.xcconfig"; sourceTree = "<group>"; };
 		840853DA216B20B300F879B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		840853DC216B273B00F879B9 /* DBSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSignInVC.swift; sourceTree = "<group>"; };
+		840853DE216B63F400F879B9 /* DBHItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHItemsCell.swift; sourceTree = "<group>"; };
+		840853DF216B63F400F879B9 /* DBHItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBHItemsCell.xib; sourceTree = "<group>"; };
+		840853E2216B641100F879B9 /* DBVitemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVitemsCell.swift; sourceTree = "<group>"; };
+		840853E3216B641100F879B9 /* DBVitemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBVitemsCell.xib; sourceTree = "<group>"; };
 		8409B62E2168A98B00575653 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		8409B6302168A99E00575653 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8409B6322168C81000575653 /* SecondViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +148,10 @@
 			children = (
 				847712D9215F4662009271B2 /* ViewControllers */,
 				84FBC1B2215CCEE100114397 /* Main.storyboard */,
+				840853DE216B63F400F879B9 /* DBHItemsCell.swift */,
+				840853DF216B63F400F879B9 /* DBHItemsCell.xib */,
+				840853E2216B641100F879B9 /* DBVitemsCell.swift */,
+				840853E3216B641100F879B9 /* DBVitemsCell.xib */,
 				8409B6342168C83E00575653 /* ItemListViewController.swift */,
 				8409B6322168C81000575653 /* SecondViewCell.swift */,
 				8409B6302168A99E00575653 /* CollectionViewCell.swift */,
@@ -270,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FBC1B9215CCEF200114397 /* LaunchScreen.storyboard in Resources */,
+				840853E5216B641100F879B9 /* DBVitemsCell.xib in Resources */,
+				840853E1216B63F400F879B9 /* DBHItemsCell.xib in Resources */,
 				84FBC1B4215CCEE100114397 /* Main.storyboard in Resources */,
 				840853DB216B20B300F879B9 /* GoogleService-Info.plist in Resources */,
 				847712E0215F549F009271B2 /* Assets.xcassets in Resources */,
@@ -358,7 +372,9 @@
 				8409B6312168A99E00575653 /* CollectionViewCell.swift in Sources */,
 				8409B6352168C83E00575653 /* ItemListViewController.swift in Sources */,
 				841BCE8B2164A29200017E33 /* NearbyCell.swift in Sources */,
+				840853E0216B63F400F879B9 /* DBHItemsCell.swift in Sources */,
 				841B9885216614FF00B799E2 /* BlurImageCell.swift in Sources */,
+				840853E4216B641100F879B9 /* DBVitemsCell.swift in Sources */,
 				8409B62F2168A98B00575653 /* SlideViewController.swift in Sources */,
 				84FBC1AF215CCEE100114397 /* AppDelegate.swift in Sources */,
 				841B9883216610D500B799E2 /* EditingViewVC.swift in Sources */,

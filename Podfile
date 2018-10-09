@@ -8,6 +8,7 @@ target 'CorrentLocation' do
   # Pods for CorrentLocation
    pod 'Firebase/Core'
    pod 'Firebase/Auth'
+   pod 'Firebase/Storage'
 
   target 'CorrentLocationTests' do
     inherit! :search_paths
