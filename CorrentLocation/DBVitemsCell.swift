@@ -57,7 +57,7 @@ class DBVitemsCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         //set the values for top,left,bottom,right margins
-        let margins = UIEdgeInsetsMake(0,10, 10, 10)
+        let margins = UIEdgeInsetsMake(10,10, 10, 10)
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, margins)
     }
     

@@ -20,7 +20,10 @@ struct vItemsData {
     var Price:Int
     var itemDesc:String
     
-    
+}
+struct newType {
+    var itemData:[String:Any]
+    var itemCount:Int
 }
 import UIKit
 import MapKit
@@ -29,6 +32,8 @@ import CoreLocation
 class ItemListViewController: UIViewController {
     var hItemDetails = [hItemsData]()
     var vItemDetails = [vItemsData]()
+    var newdata = [newType]()
+    
     var initialPrice = Int()
     var InitialItemCount = Int()
      let locationManager = CLLocationManager()
@@ -40,18 +45,22 @@ class ItemListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        newdata = [newType(itemData: ["name":"Jagan","fullname":"JaganMohanaReddy","Age":25,"Salary":37000], itemCount: 2),
+        newType(itemData: ["name":"Shiva","fullname":"Lakshmi","Age":24,"Salary":25000], itemCount: 4),
+        newType(itemData: ["name":"Mahesh","fullname":"MaheswaraReddy","Age":27,"Salary":70000], itemCount: 3),
+        newType(itemData: ["name":"Surya","fullname":"SuryanarayanaReddy","Age":45,"Salary":300000], itemCount: 2)]
         hItemDetails = [hItemsData(name: "Avagadro", image: #imageLiteral(resourceName: "images-11"), itemPrice: "₹200", itemDetails: "The avocado is a tree, long thought ", status: "OPEN", discountPrice: "₹50"),
                         hItemsData(name: "WaterMilon", image: #imageLiteral(resourceName: "images-12"), itemPrice: "₹120", itemDetails: "Citrullus lanatus is a plant species in the family Cucurbitaceae,.", status: "FUTURE", discountPrice: "₹10"),
                         hItemsData(name: "PineApple", image: #imageLiteral(resourceName: "images-13"), itemPrice: "₹150", itemDetails: "The pineapple is a tropical plant with an edible multiple fruit ", status: "OPEN", discountPrice: "₹25"),
                         hItemsData(name: "Banana", image: #imageLiteral(resourceName: "images-14"), itemPrice: "₹80", itemDetails: "A banana is an edible fruit – botanically a berry " , status: "CLOSE", discountPrice: "₹15"),
                         hItemsData(name: "Pomegranate", image: #imageLiteral(resourceName: "images-15"), itemPrice: "₹400", itemDetails: "The pomegranate is a fruit-bearing deciduous shrub or small tree in the family.", status: "SOON", discountPrice: "₹100")]
         
-        vItemDetails = [vItemsData(itemName: "Cherries", itemImage: #imageLiteral(resourceName: "cherry"), Price: 200, itemDesc: "A cherry is the fruit of many plants of the genus Prunus, and is a fleshy drupe.  sweet cherry and the sour cherry "),
+        vItemDetails = [vItemsData(itemName: "Cherries", itemImage: #imageLiteral(resourceName: "cherry"), Price: 200, itemDesc: "A cherry is the fruit of many plants of the genus Prunus, and is a fleshy drupe.  sweet cherry and the sour cherryThe pomegranate is a fruit-bearing deciduous shrub or small tree in the familyThe pomegranate is a fruit-bearing deciduous shrub or small tree in the family "),
                         vItemsData(itemName: "Pluot", itemImage: #imageLiteral(resourceName: "Pluots"), Price: 120, itemDesc: "Pluots, apriums, apriplums, or plumcots, are some of the hybrids between different Prunus species that are also called interspecific plums"),
                         vItemsData(itemName: "Gooseberry", itemImage: #imageLiteral(resourceName: "Goosebarry"), Price: 150, itemDesc: "The gooseberry, with scientific names Ribes uva-crispa, is a species of Ribes "),
-                        vItemsData(itemName: "Elderberry", itemImage: #imageLiteral(resourceName: "Elderberry"), Price: 80, itemDesc: "Sambucus is a genus of flowering plants in the family Adoxaceae." ),
-                        vItemsData(itemName: "Peach", itemImage: #imageLiteral(resourceName: "Peach"), Price: 400, itemDesc: "The peach is a deciduous tree native to the region of Northwest China between the Tarim Basin and the north slopes of the Kunlun Mountains")]
+                        vItemsData(itemName: "Elderberry", itemImage: #imageLiteral(resourceName: "Elderberry"), Price: 80, itemDesc: "Sambucus is a genus of flowering plants in the family Adoxaceae.Citrullus lanatus is a plant species in the family Cucurbitaceae,." ),
+                        vItemsData(itemName: "Peach", itemImage: #imageLiteral(resourceName: "Peach"), Price: 400, itemDesc: "The peach is a deciduous tree native to the region of Northwest China between the Tarim Basin and the north slopes of the Kunlun MountainsA banana is an edible fruit – botanically a berryThe pomegranate is a fruit-bearing deciduous shrub or small tree in the familyThe pomegranate is a ")]
         
         
         let layout1 = UICollectionViewFlowLayout()
@@ -93,9 +102,8 @@ extension ItemListViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
    
         let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "DBItemDetailsVC") as! DBItemDetailsVC
-        viewcontroller.itemname = hItemDetails[indexPath.row].name
-        //imageName
-         viewcontroller.imageName  = hItemDetails[indexPath.row].image
+        viewcontroller.detailData.removeAll()
+        viewcontroller.detailData = [itemDetails(name: hItemDetails[indexPath.row].name, image: hItemDetails[indexPath.row].image, itemPrice: hItemDetails[indexPath.row].itemPrice, itemDetails: hItemDetails[indexPath.row].itemDetails, status: hItemDetails[indexPath.row].status, discountPrice: hItemDetails[indexPath.row].discountPrice)]
         self.present(viewcontroller, animated: true, completion: nil)
     }
 }
@@ -138,7 +146,7 @@ extension ItemListViewController:UITableViewDataSource,UITableViewDelegate,DBVit
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let heightOfRow = heightForText(text: vItemDetails[indexPath.row].itemDesc, Font: UIFont(name: "Helvetica Neue", size: 12.0)!, Width: self.tableView.frame.size.width)
-        return heightOfRow + 190.0
+        return heightOfRow + 280.0
     }
     
     func heightForText(text: String,Font: UIFont,Width: CGFloat) -> CGFloat{
@@ -159,7 +167,8 @@ extension ItemListViewController:UITableViewDataSource,UITableViewDelegate,DBVit
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "DBItemDetailsVC") as! DBItemDetailsVC
-        //viewcontroller.hero = artistList[indexPath.row]
+       viewcontroller.vDetails.removeAll()
+        viewcontroller.vDetails = [vitems(itemName: vItemDetails[indexPath.row].itemName, itemImage: vItemDetails[indexPath.row].itemImage, Price: vItemDetails[indexPath.row].Price, itemDesc: vItemDetails[indexPath.row].itemDesc)]
         self.present(viewcontroller, animated: true, completion: nil)
     }
 }
